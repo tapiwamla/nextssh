@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "name": "cshell",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "start:client": "cd client && npm run build && npm start",
+    "start:server": "cd server && npm start"
+  },  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
