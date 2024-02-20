@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BaseLayout from '../components/BaseLayout';
 
 const Connection = () => {
-  const [ipAddress, setIpAddress] = useState('');
+  const [host, setHost] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,8 +16,8 @@ const Connection = () => {
       <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
           <label>
-            IP Address:
-            <input type="text" value={ipAddress} onChange={(e) => setIpAddress(e.target.value)} />
+            Host IP:
+            <input type="text" value={host} onChange={(e) => setHost(e.target.value)} />
           </label>
           <label>
             Username:
