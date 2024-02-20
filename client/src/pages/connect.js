@@ -4,7 +4,6 @@ import BaseLayout from '../components/BaseLayout';
 const Connection = () => {
   const [hostName, setHostName] = useState('');
   const [ipAddress, setIpAddress] = useState('');
-  const [port, setPort] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [authKey, setAuthKey] = useState('');
@@ -25,10 +24,6 @@ const Connection = () => {
           <label>
             IP Address:
             <input type="text" value={ipAddress} onChange={(e) => setIpAddress(e.target.value)} />
-          </label>
-          <label>
-            Port:
-            <input type="text" value={port} onChange={(e) => setPort(e.target.value)} />
           </label>
           <label>
             Username:
