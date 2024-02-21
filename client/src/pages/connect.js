@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import BaseLayout from '../components/BaseLayout';
 
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+
+require('dotenv').config({ path: '../.env' });
 
 const Connection = () => {
   const [host, setHost] = useState('');

@@ -2,12 +2,15 @@ const express = require('express');
 const app = express();
 const expressWs = require('express-ws')(app);
 
+require('dotenv').config({ path: '../.env' });
+
 import e from 'express';
 import { createNewServer } from './utils/createNewServer';
 
-const exampleHost = '172.210.83.226';
-const exampleUsername = 'ubuntu';
-const examplePassword = 'fail2Banfail2Ban';
+// Get the variables from the environment
+const inputHost = process.env.HOST;
+const inputUsername = process.env.USERNAME;
+const inputPassword = process.env.PASSWORD;
 
 const server = app.listen(3001, () => {
   console.log('Server listening on port 3001');
@@ -26,9 +29,9 @@ app.ws('/', function (ws: any, req: any) {
   });
 
   createNewServer({
-    host: exampleHost,
-    username: exampleUsername,
-    password: examplePassword
+    host: inputHost,
+    username: inputUsername,
+    password: inputPassword
   }, ws);
 });
 
