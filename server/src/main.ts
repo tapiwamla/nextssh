@@ -2,7 +2,12 @@ const express = require('express');
 const app = express();
 const expressWs = require('express-ws')(app);
 
+import e from 'express';
 import { createNewServer } from './utils/createNewServer';
+
+const exampleHost = '172.210.83.226';
+const exampleUsername = 'ubuntu';
+const examplePassword = 'fail2Banfail2Ban';
 
 const server = app.listen(3001, () => {
   console.log('Server listening on port 3001');
@@ -21,9 +26,9 @@ app.ws('/', function (ws: any, req: any) {
   });
 
   createNewServer({
-    host: '172.210.83.226',
-    username: 'ubuntu',
-    password: 'fail2Banfail2Ban'
+    host: exampleHost,
+    username: exampleUsername,
+    password: examplePassword
   }, ws);
 });
 
