@@ -1,5 +1,3 @@
-// pages/connection.js
-
 import React, { useState } from 'react';
 import BaseLayout from '../components/BaseLayout';
 import axios from 'axios';
@@ -14,15 +12,15 @@ const Connection = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Redirect to the terminal page
     router.push('/terminal')
 
+    // Try to update the connection details
     try {
       await axios.post('/api/update-details', { host, username, password });
-      // Redirect after successful submission
       router.push('/terminal');
     } catch (error) {
       console.error('Error updating connection details:', error);
-      // Handle error state
     }
   };
 
