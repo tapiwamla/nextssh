@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const expressWs = require('express-ws')(app);
+const path = require('path');
 
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: path.join(__dirname, '../../client/.env') });
 
 import e from 'express';
 import { createNewServer } from './utils/createNewServer';

@@ -1,36 +1,28 @@
-// pages/connection.js
-
 import React, { useState } from 'react';
 import BaseLayout from '../components/BaseLayout';
-import axios from 'axios';
 
 import { useRouter } from 'next/router';
+
+require('dotenv').config({ path: '../.env' });
+
 const Connection = () => {
   const [host, setHost] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const router = useRouter();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const router = useRouter()
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
 
     router.push('/terminal')
-
-    try {
-      await axios.post('/api/update-details', { host, username, password });
-      // Redirect after successful submission
-      router.push('/terminal');
-    } catch (error) {
-      console.error('Error updating connection details:', error);
-      // Handle error state
-    }
-  };
+  }
 
   return (
     <BaseLayout pageTitle="CONNECT A NEW RESOURCE">
       <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
-        <label>
+          <label>
             Host IP:
             <input type="text" value={host} onChange={(e) => setHost(e.target.value)} pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" title="For example: 127.0.0.1" required />
           </label>
