@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/main.ts"
+    "start": "nodemon --watch ../client/.env --watch src src/main.ts"
   },
   "keywords": [],
   "author": "",
