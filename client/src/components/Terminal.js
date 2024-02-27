@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import 'xterm/css/xterm.css'; // Still import the CSS directly
+import 'xterm/css/xterm.css'; 
+import io from 'socket.io-client';
 
 const FontSize = 16;
 const Col = 80;
@@ -9,7 +10,7 @@ const WebTerminal = () => {
 
   useEffect(() => {
     const initializeTerminal = async () => { 
-      // Dynamically import 'xterm' and its addons
+      // Dynamically load xterm and its addons
       const { Terminal } = await import('xterm');
       const { WebLinksAddon } = await import('xterm-addon-web-links'); 
       const { FitAddon } = await import('xterm-addon-fit'); 
@@ -32,24 +33,18 @@ const WebTerminal = () => {
         terminal.write('Hi from \x1B[1;31mCShell\x1B[0m $ ');
         fitAddon.fit();
         webTerminal.current = terminal;
-        
-        // Initialize WebSocket connection
-        const socket = new WebSocket('ws://localhost:3000/api/ssh'); // Your Next.js API route
-        socket.onopen = () => {
-         // Connection successfully established
-        };
 
-        // Attach event listener for keyboard input
-        terminal.onData(data => socket.send(data));
+        // Initialize Socket.IO connection
+        const socket = io('http://localhost:3000'); // Replace with your server address
 
-        // Handle data received from the WebSocket
-        socket.onmessage = e => {
-          if (typeof e.data === 'string') {
-            terminal.write(e.data);
-          } else {
-            console.error('Invalid Data Type: ', e.data);
-          }
-        };
+        // Attach event listener for keyboard input & Socket.IO data
+        terminal.onData(data => socket.emit('message', data));
+        socket.on('message', data => terminal.write(data)); 
+
+        socket.on('error', (err) => {
+          console.error('Socket.IO error:', err);
+          // Handle errors or display them to the user
+        });
       }
     };
 
