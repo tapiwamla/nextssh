@@ -1,6 +1,7 @@
 // pages/api/ssh.js
-import { SSHClient } from 'ssh2';
-import { WebSocketServer } from 'ws';
+const ssh2 = require('ssh2');
+const { Client } = ssh2;
+const { WebSocketServer } = 'ws'; 
 
 const sshHandler = async (req, res) => {
   if (req.method !== 'POST') {
@@ -8,33 +9,34 @@ const sshHandler = async (req, res) => {
     return;
   }
 
-  // WebSocket connection logic
-  const wss = new WebSocketServer({ noServer: true });
+  const { host, username, password } = req.body;
 
-  wss.on('connection', (socket) => {
-    const { host, username, password } = req.body;
+  const ssh = new Client();
+  ssh.on('ready', () => {
+    ssh.shell((err, stream) => {
+      if (err) {
+        console.error('SSH Error:', err.message);
+        res.status(500).send(`SSH Error: ${err.message}`); 
+        return;
+      }
 
-    const ssh = new SSHClient();
-    ssh.on('ready', () => {
-      ssh.shell((err, stream) => {
-        if (err) {
-          socket.send(`SSH Error: ${err.message}`);
-          return;
-        }
-
+      // Setup socket on 'connection' event directly 
+      res.socket.on('connection', (socket) => {
         socket.on('message', (data) => stream.write(data));
         stream.on('data', (data) => socket.send(data.toString()));
         stream.on('close', () => ssh.end());
       });
-    }).connect({
-      host,
-      username,
-      password,
     });
+  }).on('error', (err) => {
+    console.error('SSH connection error:', err); 
+    res.status(500).send('SSH connection error'); 
+  }).connect({
+    host,
+    username,
+    password,
   });
 
-  // Upgrade the request for WebSocket use 
-  res.socket.server.ws.handleUpgrade(req, req.socket, Buffer.alloc(0), wss.handleUpgrade);
+  res.status(200).end(); 
 };
 
 export default sshHandler;
