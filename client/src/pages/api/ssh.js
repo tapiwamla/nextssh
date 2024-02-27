@@ -31,6 +31,7 @@ const sshHandler = async (req, res) => {
     console.error('SSH connection error:', err); 
     res.status(500).send('SSH connection error'); 
   }).connect({
+    port: 22,
     host,
     username,
     password,
