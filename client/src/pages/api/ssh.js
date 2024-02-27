@@ -1,7 +1,6 @@
 // pages/api/ssh.js
 const ssh2 = require('ssh2');
 const { Client } = ssh2;
-const { WebSocketServer } = 'ws'; 
 
 const sshHandler = async (req, res) => {
   if (req.method !== 'POST') {
