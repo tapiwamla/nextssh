@@ -12,7 +12,11 @@ const sshHandler = async (req, res) => {
   const { host, username, password } = req.body;
 
   const ssh = new Client();
+
+  // Attach event listeners for connection management
   ssh.on('ready', () => {
+    console.log('SSH Connection established');
+
     ssh.shell((err, stream) => {
       if (err) {
         console.error('SSH Error:', err.message);
@@ -24,14 +28,19 @@ const sshHandler = async (req, res) => {
       res.socket.on('connection', (socket) => {
         socket.on('message', (data) => stream.write(data));
         stream.on('data', (data) => socket.send(data.toString()));
-        stream.on('close', () => ssh.end());
+        stream.on('close', () => {
+          ssh.end(); // End SSH connection when stream closes
+          console.log('SSH connection closed'); 
+        });
       });
     });
   }).on('error', (err) => {
     console.error('SSH connection error:', err); 
     res.status(500).send('SSH connection error'); 
-  }).connect({
-    port: 22,
+  });
+
+  // Initiate the connection attempt
+  ssh.connect({
     host,
     username,
     password,
