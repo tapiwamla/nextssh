@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import BaseLayout from '../components/BaseLayout';
-import axios from 'axios';
-
 import { useRouter } from 'next/router';
+
 const Connection = () => {
   const [host, setHost] = useState('');
   const [username, setUsername] = useState('');
@@ -12,15 +11,21 @@ const Connection = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Redirect to the terminal page
-    router.push('/terminal')
-
-    // Try to update the connection details
+    // Try to send the connection details
     try {
-      await axios.post('/api/update-details', { host, username, password });
-      router.push('/terminal');
+      const response = await fetch('/api/ssh', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ host, username, password })
+      });
+
+      if (response.ok) {
+        router.push('/terminal'); 
+      } else {
+        console.error('Error connecting:', response);
+      }
     } catch (error) {
-      console.error('Error updating connection details:', error);
+      console.error('Error connecting:', error);
     }
   };
 
@@ -28,17 +33,33 @@ const Connection = () => {
     <BaseLayout pageTitle="CONNECT A NEW RESOURCE">
       <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
-        <label>
+          <label>
             Host IP:
-            <input type="text" value={host} onChange={(e) => setHost(e.target.value)} pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" title="For example: 127.0.0.1" required />
+            <input 
+              type="text" 
+              value={host} 
+              onChange={(e) => setHost(e.target.value)} 
+              pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" 
+              title="For example: 127.0.0.1" required 
+            />
           </label>
           <label>
             Username:
-            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+            <input 
+              type="text" 
+              value={username} 
+              onChange={(e) => setUsername(e.target.value)} 
+              required 
+            />
           </label>
           <label>
             Password:
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input 
+              type="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              required 
+            />
           </label>
           <button type="submit">Connect</button>
         </form>
@@ -47,4 +68,4 @@ const Connection = () => {
   );
 };
 
-export default Connection;
+export default Connection; 
