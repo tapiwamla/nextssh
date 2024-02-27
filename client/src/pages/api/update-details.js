@@ -20,7 +20,7 @@ export default function handler(req, res) {
       }
       
       // Redirect to terminal page after writing to the file
-      res.status(200).json({ message: 'Environment variables written successfully' });
+      res.status(200).json({ message: 'Details updated successfully' });
     });
   } else {
     res.status(405).json({ message: 'Method Not Allowed' });
