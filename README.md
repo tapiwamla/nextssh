@@ -1,2 +1,1 @@
-# CShell: A Web-based SSH Client
-
+# CShell Frontend
