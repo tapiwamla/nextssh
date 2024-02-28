@@ -1,20 +1,20 @@
 {
   "../components/Terminal.js -> xterm": {
-    "id": "../components/Terminal.js -> xterm",
+    "id": 2320,
     "files": [
-      "static/chunks/node_modules_xterm_lib_xterm_js.js"
+      "static/chunks/ed150ef9.153e155559cc2c1f.js"
     ]
   },
   "../components/Terminal.js -> xterm-addon-fit": {
-    "id": "../components/Terminal.js -> xterm-addon-fit",
+    "id": 2617,
     "files": [
-      "static/chunks/node_modules_xterm-addon-fit_lib_xterm-addon-fit_js.js"
+      "static/chunks/617.27dcbcd7a553918f.js"
     ]
   },
   "../components/Terminal.js -> xterm-addon-web-links": {
-    "id": "../components/Terminal.js -> xterm-addon-web-links",
+    "id": 7511,
     "files": [
-      "static/chunks/node_modules_xterm-addon-web-links_lib_xterm-addon-web-links_js.js"
+      "static/chunks/511.c7001197cc2c690b.js"
     ]
   }
 }

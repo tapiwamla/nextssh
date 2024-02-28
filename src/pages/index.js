@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import BaseLayout from '../components/BaseLayout';
 import { useRouter } from 'next/router';
 
-const Connection = () => {
+const Connect = () => {
   const [host, setHost] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -30,7 +30,7 @@ const Connection = () => {
   };
 
   return (
-    <BaseLayout pageTitle="CONNECT A NEW RESOURCE">
+    <BaseLayout pageTitle="CONNECT A NEW SERVER">
       <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
           <label>
@@ -68,4 +68,4 @@ const Connection = () => {
   );
 };
 
-export default Connection; 
+export default Connect; 
