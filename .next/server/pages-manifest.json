@@ -1,1 +1,8 @@
-{"/_app":"pages/_app.js","/_error":"pages/_error.js","/account":"pages/account.html","/api/ssh":"pages/api/ssh.js","/connect":"pages/connect.html","/":"pages/index.html","/terminal":"pages/terminal.html","/_document":"pages/_document.js","/404":"pages/404.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/terminal": "pages/terminal.js",
+  "/connect": "pages/connect.js",
+  "/api/ssh": "pages/api/ssh.js"
+}
