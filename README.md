@@ -1,26 +1,47 @@
-# CShell
+# CShell: A Web-based SSH Client and Terminal Emulator
 
-CShell is a web-based SSH client and terminal emulator that allows you to connect and manage remote server via a standard web browser. It was developed by [Tapiwanashe Mlambo](https://tapiwamla.me) as his final project for his Bachelor of Science in Applied Computer Technology at USIU-Africa(https://usiu.ac.ke).
+Connect to and command your remote servers effortlessly with CShell, a web-based SSH client and terminal emulator. Master your systems directly from your browser!
 
-## Features
-- Remote server connection via SSH
-- Interactive terminal
-- Connection management
+## Key Features
+
+- **Seamless SSH Connections:** Establish secure connections to your remote servers with ease.
+- **Responsive Terminal Experience:** Enjoy a fluid, full-featured terminal right in your web browser.
+- **Organized Connection Management:** Conveniently manage multiple server connections. 
 
 ## Technologies
-- [NextJS](https://nextjs.org)
-- [React](https://reactjs.org)
-- [NodeJS](https://nodejs.org)
-- [Socket.io](https://socket.io)
-- [Xterm.js](https://xterm.js.org)
-- [SSH2](https://www.npmjs.com/package/ssh2)
 
-## Running Local
-1. Clone the repository to your local machine
-```git clone https://github.com/tapiwamla/cshell.git```
+- [NextJS:](https://nextjs.org)  Blazing-fast [React](https://reactjs.org)-based web framework.
+- [NodeJS:](https://nodejs.org) Robust JavaScript runtime environment.
+- [Socket.io:](https://socket.io) Real-time, bi-directional communication for seamless updates.
+- [Xterm.js:](https://xtermjs.org) Robust terminal emulation in the browser.
+- [SSH2:](https://npmjs.com/package/ssh2) Comprehensive SSH2 implementation for NodeJS.
 
-2. Install dependencies
-```npm install```
+## Local Development
 
-3. Start the development server
-```npm run dev```
+1. Clone the Repository:
+   ```bash
+   git clone https://github.com/tapiwamla/cshell.git
+   ```
+
+2. Install Dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the Development Server:
+   ```bash
+   npm run dev 
+   ```
+
+## Contributing
+
+- CShell was passionately crafted by [Tapiwanashe Mlambo](https://tapiwamla.me), a graduate of the Bachelor of Science in Applied Computer Technology from [USIU-Africa](https://usiu.ac.ke).
+
+- Want to make CShell even better? I welcome contributions! Feel free to open issues, submit pull requests, or suggest new features. Let's build together!
+
+- If you find CShell useful, a star on the GitHub repo would be awesome!
+
+## Additional Notes
+
+- **Security:** CShell handles SSH connections. Ensure you follow best security practices and use strong credentials.
+- **Deployment:** Explore suitable hosting options (like cloud providers) for production deployment.
