@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/terminal": "pages/terminal.js",
-  "/connect": "pages/connect.js",
-  "/api/ssh": "pages/api/ssh.js"
+  "/": "pages/index.js",
+  "/dashboard": "pages/dashboard.js",
+  "/terminal": "pages/terminal.js"
 }

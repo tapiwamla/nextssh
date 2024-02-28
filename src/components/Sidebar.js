@@ -12,12 +12,12 @@ import { useRouter } from "next/router";
 const sidebarItems = [
   {
     name: "New Connection",
-    href: "/connect",
+    href: "/",
     icon: FaPlus,
   },
   {
     name: "Dashboard",
-    href: "/",
+    href: "/dashboard",
     icon: MdSpaceDashboard,
   },
   {
