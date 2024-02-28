@@ -5,7 +5,7 @@ import io from 'socket.io-client';
 const FontSize = 16;
 const Col = 80;
 
-const WebTerminal = () => {
+const XTerminal = () => {
   const webTerminal = useRef(null);
 
   useEffect(() => {
@@ -56,4 +56,4 @@ const WebTerminal = () => {
   );
 };
 
-export default WebTerminal;
+export default XTerminal;
