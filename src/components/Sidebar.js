@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
-import { MdSpaceDashboard } from "react-icons/md";
+import { HiServer } from "react-icons/hi";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { HiTerminal } from "react-icons/hi";
@@ -16,9 +16,9 @@ const sidebarItems = [
     icon: FaPlus,
   },
   {
-    name: "Dashboard",
+    name: "Connections",
     href: "/dashboard",
-    icon: MdSpaceDashboard,
+    icon: HiServer,
   },
   {
     name: "Terminal",

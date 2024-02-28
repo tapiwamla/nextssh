@@ -1,7 +1,7 @@
 import BaseLayout from "../components/BaseLayout";
 
 const Home = () => {
-  return <BaseLayout pageTitle="DASHBOARD">...</BaseLayout>;
+  return <BaseLayout pageTitle="CONNECTIONS">...</BaseLayout>;
 };
 
 export default Home;
