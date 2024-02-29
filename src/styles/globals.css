@@ -200,28 +200,31 @@ li:last-of-type {
   border: none;
   background-color: var(--color-active);
   color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
   cursor: pointer;
   width: 20rem;
   text-align: center;
   margin-left: auto;
 }
 
-.connections-dashboard {
+.widgets-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0;
 }
 
 .connection-widget {
   display: inline-block;
-  min-width: 23vw;
+  min-width: 25vw;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   padding: 25px;
-  margin: 10px 10px 10px 0;
+  margin-bottom: 20px;
   cursor: pointer;
   border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .connection-widget:hover {

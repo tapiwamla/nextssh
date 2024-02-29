@@ -69,7 +69,7 @@ const Connect = () => {
               required 
             />
           </label>
-          <button type="submit">Connect</button>
+          <button type="submit">Save & Connect</button>
         </form>
       </div>
     </BaseLayout>
