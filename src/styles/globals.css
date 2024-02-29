@@ -205,3 +205,25 @@ li:last-of-type {
   text-align: center;
   margin-left: auto;
 }
+
+.connections-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.connection-widget {
+  display: inline-block;
+  min-width: 23vw;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 25px;
+  margin: 10px 10px 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.connection-widget:hover {
+  background-color: #e8e8e8;
+}

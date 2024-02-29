@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BaseLayout from '../components/BaseLayout';
+import BaseLayout from '@/components/BaseLayout';
 import { useRouter } from 'next/router';
 
 const Connect = () => {
@@ -11,7 +11,8 @@ const Connect = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Try to send the connection details
+    console.log('Form submitted with:', { host, username, password }); // Debug input
+
     try {
       const response = await fetch('/api/ssh', {
         method: 'POST',
@@ -19,7 +20,14 @@ const Connect = () => {
         body: JSON.stringify({ host, username, password })
       });
 
+      console.log('API response:', response); // Debug response details
+
       if (response.ok) {
+        // Store connection details in local storage
+        const connectionData = { host, username, password }; 
+        localStorage.setItem(host, JSON.stringify(connectionData));
+        console.log('Connection details stored successfully'); // Debug storage
+
         router.push('/terminal'); 
       } else {
         console.error('Error connecting:', response);
