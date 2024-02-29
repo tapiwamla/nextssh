@@ -35,9 +35,9 @@ const ConnectionWidget = ({ alias, host, username, password }) => {
 
   return (
     <div className="connection-widget" onClick={debouncedClick}>
-      <p><strong>Name:</strong> {alias}</p>
-      <p><strong>Host:</strong> {host}</p>
-      <p><strong>Username:</strong> {username}</p>
+      <p className="widget-title"><strong></strong> {alias}</p>
+      <p className="widget-info"><strong>IP Address:</strong> {host}</p>
+      <p className="widget-info"><strong>User Name:</strong> {username}</p>
     </div>
   );
 };

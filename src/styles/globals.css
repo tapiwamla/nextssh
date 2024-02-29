@@ -227,6 +227,27 @@ li:last-of-type {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.widget-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  background-color: #252428;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.widget-info {
+  font-family:'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.widget-info strong {
+  font-family: 'Roboto', sans-serif;
+}
+
 .connection-widget:hover {
   background-color: #e8e8e8;
 }
