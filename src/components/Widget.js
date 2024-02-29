@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 const ConnectionWidget = ({ host, username, password }) => {
   const router = useRouter();
 
-  const handleClick = async () => {  
+  const handleClick = async () => {
     try {
       const response = await fetch('/api/ssh', {
         method: 'POST',
@@ -22,8 +22,19 @@ const ConnectionWidget = ({ host, username, password }) => {
     }
   };
 
+  // Debounce function
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return function () {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => func.apply(this, arguments), delay);
+    };
+  };
+
+  const debouncedClick = debounce(handleClick, 1000);
+
   return (
-    <div className="connection-widget" onClick={handleClick}>
+    <div className="connection-widget" onClick={debouncedClick}>
       <p><strong>Host:</strong> {host}</p>
       <p><strong>Username:</strong> {username}</p>
     </div>
