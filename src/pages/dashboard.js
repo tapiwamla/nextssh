@@ -1,7 +1,7 @@
 import BaseLayout from "../components/BaseLayout";
 
-const Home = () => {
+const Dashboard = () => {
   return <BaseLayout pageTitle="CONNECTIONS">...</BaseLayout>;
 };
 
-export default Home;
+export default Dashboard;
