@@ -3,6 +3,7 @@ import BaseLayout from '@/components/BaseLayout';
 import { useRouter } from 'next/router';
 
 const Connect = () => {
+  const [alias, setAlias] = useState('');
   const [host, setHost] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,14 +18,14 @@ const Connect = () => {
       const response = await fetch('/api/ssh', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ host, username, password })
+        body: JSON.stringify({ alias, host, username, password })
       });
 
       console.log('API response:', response); // Debug response details
 
       if (response.ok) {
         // Store connection details in local storage
-        const connectionData = { host, username, password }; 
+        const connectionData = { alias, host, username, password }; 
         localStorage.setItem(host, JSON.stringify(connectionData));
         console.log('Connection details stored successfully'); // Debug storage
 
@@ -41,6 +42,15 @@ const Connect = () => {
     <BaseLayout pageTitle="CONNECT A NEW SERVER">
       <div className="form-wrapper">
         <form onSubmit={handleSubmit}>
+          <label>
+            Server Alias:
+            <input 
+              type="text" 
+              value={alias} 
+              onChange={(e) => setAlias(e.target.value)}
+              required  
+            />
+          </label>
           <label>
             Host IP:
             <input 

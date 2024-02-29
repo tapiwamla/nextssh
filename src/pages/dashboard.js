@@ -29,6 +29,7 @@ const Dashboard = () => {
             {connections.map((connection) => (
               <Widget
                 key={connection.host}
+                alias={connection.alias}
                 host={connection.host}
                 username={connection.username}
                 password={connection.password}

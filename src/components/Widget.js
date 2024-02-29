@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-const ConnectionWidget = ({ host, username, password }) => {
+const ConnectionWidget = ({ alias, host, username, password }) => {
   const router = useRouter();
 
   const handleClick = async () => {
@@ -35,6 +35,7 @@ const ConnectionWidget = ({ host, username, password }) => {
 
   return (
     <div className="connection-widget" onClick={debouncedClick}>
+      <p><strong>Name:</strong> {alias}</p>
       <p><strong>Host:</strong> {host}</p>
       <p><strong>Username:</strong> {username}</p>
     </div>
