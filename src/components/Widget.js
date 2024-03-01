@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import { FaLinux } from "react-icons/fa";
 
 const ConnectionWidget = ({ alias, host, username, password }) => {
   const router = useRouter();
@@ -31,13 +32,18 @@ const ConnectionWidget = ({ alias, host, username, password }) => {
     };
   };
 
-  const debouncedClick = debounce(handleClick, 1000);
+  const debouncedClick = debounce(handleClick, 3000);
 
   return (
     <div className="connection-widget" onClick={debouncedClick}>
-      <p className="widget-title"><strong></strong> {alias}</p>
-      <p className="widget-info"><strong>IP Address:</strong> {host}</p>
-      <p className="widget-info"><strong>User Name:</strong> {username}</p>
+      <div className="widget-header">
+        <FaLinux className="widget-icon"/>
+        <p className="widget-title"><strong></strong> {alias}</p>
+      </div>
+      <div className="widget-info">        
+        <p><strong>IP Address:</strong> {host}</p>
+        <p><strong>User Name:</strong> {username}</p>
+      </div>
     </div>
   );
 };

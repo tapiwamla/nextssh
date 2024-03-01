@@ -216,15 +216,28 @@ li:last-of-type {
 }
 
 .connection-widget {
-  display: inline-block;
-  min-width: 25vw;
+  display: block;
+  align-items: center;
+  min-width: 23vw;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
-  padding: 25px;
+  padding: 50px;
   margin-bottom: 20px;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.widget-header {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.widget-icon {
+  display: inline-block;
+  font-size: 3em;
+  margin-right: 1rem;
+  color: #252428;
 }
 
 .widget-title {
