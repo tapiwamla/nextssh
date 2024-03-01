@@ -32,7 +32,7 @@ const ConnectionWidget = ({ alias, host, username, password }) => {
     };
   };
 
-  const debouncedClick = debounce(handleClick, 3000);
+  const debouncedClick = debounce(handleClick, 5000);
 
   return (
     <div className="connection-widget" onClick={debouncedClick}>
