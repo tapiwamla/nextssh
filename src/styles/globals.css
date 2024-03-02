@@ -87,8 +87,8 @@ body {
   flex-direction: column;
 }
 
-li:last-of-type {
-  margin-top: 40vh;
+li:nth-last-of-type(2) {
+  margin-top: 32vh;
 }
 
 .sidebar-link {
