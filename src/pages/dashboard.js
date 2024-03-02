@@ -23,7 +23,7 @@ const Dashboard = () => {
     <BaseLayout pageTitle="CONNECTIONS">
       <div className="connections-dashboard">
         {connections.length === 0 ? (
-          <p>You have no active connections yet.</p>
+          <p>No active connections yet. Visit the "New Connection" page to create one.</p>
         ) : (
           <div className="widgets-grid">
             {connections.map((connection) => (
