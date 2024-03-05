@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
+/* GLOBAL LAYOUTS */
 :root {
   --color-bg: #fff;
   --color-border: #e5e7eb;
@@ -47,6 +48,8 @@ body {
   font-weight: normal;
 }
 
+
+/* SIDEBAR */
 .sidebar-wrapper {
   position: relative;
 }
@@ -133,7 +136,7 @@ li:nth-last-of-type(2) {
   line-height: 1.5;
 }
 
-.btn {
+.sidebar-toggle {
   position: absolute;
   right: 0;
   top: 4.7rem;
@@ -151,6 +154,7 @@ li:nth-last-of-type(2) {
   font-size: 1.1rem;
 }
 
+/* CONNECT FORM */
 .form-wrapper {
   display: flex;
   flex-direction: column;
@@ -209,6 +213,7 @@ li:nth-last-of-type(2) {
   margin-left: auto;
 }
 
+/* CONNECTIONS */
 .widgets-grid {
   display: flex;
   flex-wrap: wrap;
@@ -300,3 +305,4 @@ li:nth-last-of-type(2) {
 .terminal-button {
   background-color: var(--color-dark);
 }
+

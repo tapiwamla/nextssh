@@ -42,7 +42,7 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar-wrapper">
-      <button className="btn" onClick={toggleSidebarcollapse}>
+      <button className="sidebar-toggle" onClick={toggleSidebarcollapse}>
         {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
       </button>
       <aside className="sidebar" data-collapse={isCollapsed}>
