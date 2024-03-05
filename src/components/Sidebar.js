@@ -25,7 +25,7 @@ const sidebarItems = [
     icon: HiTerminal,
   },
   {
-    name: "Settings",
+    name: "Preferences",
     href: "/settings",
     icon: LuSettings2,
   },
