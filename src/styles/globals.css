@@ -335,3 +335,64 @@ li:nth-last-of-type(2) {
 .theme-icon {
   font-size: 1.3rem;
 }
+
+/* SIGNIN PAGE */
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5rem;
+}
+
+.left-section,
+.right-section {
+  width: 25%;
+}
+
+.signin-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.signin-button:last-of-type {
+  background: none;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+}
+
+.signin-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--color-active);
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.landing-image {
+  width: auto;
+  height: 30rem;
+  border-radius: 3rem;
+}
+
+.landing-title {
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+.landing-icon {
+  font-size: 1.5rem;
+}
