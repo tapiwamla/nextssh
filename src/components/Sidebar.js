@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 const sidebarItems = [
   {
     name: "New Connection",
-    href: "/",
+    href: "/connect",
     icon: FaPlus,
   },
   {
