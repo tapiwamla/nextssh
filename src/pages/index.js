@@ -19,27 +19,25 @@ const Index = () => {
     );
   }
   return (
-    <div className="main-container"> 
-      <div className="left-section">
+    <div className="landing-main"> 
+      <div className="landing-left">
         <img className="landing-image" src="/servers.jpg" alt="Servers" />
       </div>
-      <div className="right-section">
+      <div className="landing-right">
         <h1 className="landing-title">CShell: SSH on the Web</h1>
-        <p>Connect to and command your remote servers effortlessly with CShell, a web-based SSH client and terminal emulator. Master your systems directly from your browser!</p>
+        <p className="landing-descr">Connect to and command your remote servers effortlessly with CShell, a web-based <strong>SSH client</strong> and <strong>terminal emulator</strong>. Master your systems directly from your browser!</p>
         {status === "loading" && <div>Loading...</div>}
         {!session && (
           <>
-            <div className="signin-buttons">
-            <button 
-                className="signin-button" 
+            <div className="landing-buttons">
+            <button
                 onClick={() => signIn("google", { 
                   callbackUrl: `${window.location.origin}/connect`
                 })}
               >
                 <FaGoogle className="landing-icon" /> Continue with Google
               </button>
-              <button 
-                className="signin-button" 
+              <button  
                 onClick={() => signIn("github", {
                   callbackUrl: `${window.location.origin}/connect`,
                 })}

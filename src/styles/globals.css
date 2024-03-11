@@ -336,21 +336,20 @@ li:nth-last-of-type(2) {
   font-size: 1.3rem;
 }
 
-/* SIGNIN PAGE */
-
-.main-container {
+/* LANDING PAGE */
+.landing-main {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 5rem;
 }
 
-.left-section,
-.right-section {
+.landing-left,
+.landing-right {
   width: 25%;
 }
 
-.signin-buttons {
+.landing-buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -358,13 +357,13 @@ li:nth-last-of-type(2) {
   margin-top: 2rem;
 }
 
-.signin-button:last-of-type {
+.landing-buttons button:last-of-type {
   background: none;
   color: var(--color-dark);
   border: 2px solid var(--color-dark);
 }
 
-.signin-button {
+.landing-buttons button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -395,4 +394,12 @@ li:nth-last-of-type(2) {
 
 .landing-icon {
   font-size: 1.5rem;
+}
+
+.landing-descr {
+  text-align: justify;
+}
+
+.landing-descr strong {
+  color: var(--color-active);
 }
