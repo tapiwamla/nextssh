@@ -1,7 +1,7 @@
 import BaseLayout from "@/components/BaseLayout";
 
-const Login = () => {
+const Account = () => {
   return <BaseLayout pageTitle="ACCOUNT DETAILS">...</BaseLayout>;
 };
 
-export default Login;
+export default Account;
