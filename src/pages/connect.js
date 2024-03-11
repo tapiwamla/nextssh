@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BaseLayout from '@/components/BaseLayout';
 import { useRouter } from 'next/router';
+import { useSession, getSession } from 'next-auth/react'; 
 
 const Connect = () => {
   const [alias, setAlias] = useState('');
@@ -8,6 +9,15 @@ const Connect = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (!session) {
+    return <div>Please sign in to add a connection.</div>;
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -85,5 +95,22 @@ const Connect = () => {
     </BaseLayout>
   );
 };
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: { session },
+  };
+}
 
 export default Connect; 

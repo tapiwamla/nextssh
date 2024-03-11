@@ -1,9 +1,19 @@
 import BaseLayout from "@/components/BaseLayout";
 import Widget from '@/components/Widget'; 
 import { useEffect, useState } from 'react';
+import { useSession, getSession } from 'next-auth/react'; //1
 
 const Dashboard = () => {
+  const { data: session, status } = useSession(); //2
   const [connections, setConnections] = useState([]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (!session) {
+    return <div>Please sign in to view your dashboard.</div>;
+  }
 
   useEffect(() => {
     const fetchConnections = async () => {
@@ -41,5 +51,22 @@ const Dashboard = () => {
     </BaseLayout>
   );
 };
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: { session },
+  };
+}
 
 export default Dashboard;
