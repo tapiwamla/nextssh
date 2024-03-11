@@ -274,12 +274,11 @@ li:nth-last-of-type(2) {
 
 .widget-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
   gap: 1rem;
 }
 
-.edit-button,
 .delete-button,
 .terminal-button {
   cursor: pointer;

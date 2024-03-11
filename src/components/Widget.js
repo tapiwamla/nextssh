@@ -2,10 +2,14 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { FaLinux } from "react-icons/fa";
 import { HiTerminal } from "react-icons/hi";
-import { MdDelete, MdModeEditOutline } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 
-const ConnectionWidget = ({ alias, host, username, password }) => {
+const ConnectionWidget = ({ alias, host, username, password, onRemove }) => {
   const router = useRouter();
+
+  const handleRemove = () => {
+    if (onRemove) onRemove(host);
+  };
 
   const handleClick = async () => {
     try {
@@ -49,11 +53,7 @@ const ConnectionWidget = ({ alias, host, username, password }) => {
       </div>
 
       <div className="widget-buttons"> 
-          <button className="edit-button">
-            Edit
-            <MdModeEditOutline className="control-icon" />
-          </button>
-          <button className="delete-button">
+          <button className="delete-button" onClick={handleRemove}>
             Remove
             <MdDelete className="control-icon" />
           </button>
