@@ -7,6 +7,7 @@
   --color-sidebar-item: #f3f4f6;
   --color-active: #10b981;
   --color-dark: #252428;
+  --color-red: #b70000;
 }
 
 * {
@@ -156,7 +157,8 @@ li:nth-last-of-type(2) {
 
 /* CONNECT FORM */
 .form-wrapper,
-.settings-container {
+.settings-container,
+.account-details {
   display: flex;
   flex-direction: column;
   padding: 40px;
@@ -299,7 +301,7 @@ li:nth-last-of-type(2) {
 }
 
 .delete-button {
-  background-color: #b70000;
+  background-color: var(--color-red);
 }
 
 .terminal-button {
@@ -402,4 +404,41 @@ li:nth-last-of-type(2) {
 
 .landing-descr strong {
   color: var(--color-active);
+}
+
+/* ACCOUNT */
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.account-details p {
+  display: flex;
+  align-items: flex-start;
+  font-weight: 500;
+}
+
+.profile-details {
+  min-width: 100px;
+  margin-right: 10px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.profile-picture {
+  border-radius: 5rem;
+}
+
+
+.signout-button {
+  width: 10rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  background-color: var(--color-red);
+  color: var(--color-bg);
+  border: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
 }

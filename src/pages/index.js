@@ -6,18 +6,15 @@ const Index = () => {
   const { data: session, status } = useSession();  
   const router = useRouter();
 
+  if (status === "authenticated") {
+    router.push('/connect');
+    return null;
+  }
+
   if (status === "loading") {
     return <div>Loading...</div>;
   }
 
-  if (session) {
-    return (
-      <>
-        Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    );
-  }
   return (
     <div className="landing-main"> 
       <div className="landing-left">
