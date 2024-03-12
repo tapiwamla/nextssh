@@ -29,7 +29,6 @@ const ConnectionWidget = ({ alias, host, username, password, onRemove }) => {
     }
   };
 
-  // Debounce function
   const debounce = (func, delay) => {
     let timeoutId;
     return function () {

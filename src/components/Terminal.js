@@ -10,7 +10,6 @@ const XTerminal = () => {
 
   useEffect(() => {
     const initializeTerminal = async () => { 
-      // Dynamically load xterm and its addons
       const { Terminal } = await import('xterm');
       const { WebLinksAddon } = await import('xterm-addon-web-links'); 
       const { FitAddon } = await import('xterm-addon-fit'); 
@@ -34,16 +33,13 @@ const XTerminal = () => {
         fitAddon.fit();
         webTerminal.current = terminal;
 
-        // Initialize Socket.IO connection
-        const socket = io('http://localhost:3000'); // Replace with your server address
+        const socket = io('http://localhost:3000');
 
-        // Attach event listener for keyboard input & Socket.IO data
         terminal.onData(data => socket.emit('message', data));
         socket.on('message', data => terminal.write(data)); 
 
         socket.on('error', (err) => {
           console.error('Socket.IO error:', err);
-          // Handle errors or display them to the user
         });
       }
     };

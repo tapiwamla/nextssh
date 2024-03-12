@@ -10,14 +10,12 @@ const sshHandler = async (req, res) => {
 
   const { host, username, password } = req.body;
 
-  // Initialize Socket.IO server
   const io = new Server(res.socket.server, { cors: { origin: '*' } });
   console.log('Socket.IO server created');
 
   io.on('connection', (socket) => {
     console.log('Socket.IO connected');
 
-    // Initiate SSH connection only after Socket.IO client establishes connection
     const ssh = new Client(); 
     ssh.on('ready', () => {
       console.log('SSH Connection established');
@@ -33,7 +31,7 @@ const sshHandler = async (req, res) => {
         stream.on('data', (data) => socket.emit('message', data.toString())); 
         stream.on('close', () => {
           ssh.end(); 
-          socket.disconnect(); // Close Socket.IO on SSH closure
+          socket.disconnect();
           console.log('SSH connection closed');
         });
       });

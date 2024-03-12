@@ -1,4 +1,4 @@
-import BaseLayout from "@/components/BaseLayout"; // Assume you have this layout component
+import BaseLayout from "@/components/BaseLayout";
 import { useSession, getSession, signOut } from "next-auth/react";
 
 const Account = () => {

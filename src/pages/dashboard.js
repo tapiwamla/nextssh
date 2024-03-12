@@ -1,10 +1,10 @@
 import BaseLayout from "@/components/BaseLayout";
 import Widget from '@/components/Widget'; 
 import { useEffect, useState } from 'react';
-import { useSession, getSession } from 'next-auth/react'; //1
+import { useSession, getSession } from 'next-auth/react';
 
 const Dashboard = () => {
-  const { data: session, status } = useSession(); //2
+  const { data: session, status } = useSession();
   const [connections, setConnections] = useState([]);
 
   if (status === "loading") {

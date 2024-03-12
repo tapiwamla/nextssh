@@ -22,7 +22,7 @@ const Connect = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log('Form submitted with:', { host, username, password }); // Debug input
+    console.log('Form submitted with:', { host, username, password });
 
     try {
       const response = await fetch('/api/ssh', {
@@ -31,13 +31,12 @@ const Connect = () => {
         body: JSON.stringify({ alias, host, username, password })
       });
 
-      console.log('API response:', response); // Debug response details
+      console.log('API response:', response);
 
       if (response.ok) {
-        // Store connection details in local storage
         const connectionData = { alias, host, username, password }; 
         localStorage.setItem(host, JSON.stringify(connectionData));
-        console.log('Connection details stored successfully'); // Debug storage
+        console.log('Connection details stored successfully');
 
         router.push('/terminal'); 
       } else {
