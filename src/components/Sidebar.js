@@ -54,7 +54,7 @@ const Sidebar = () => {
             src="/logo.jpg"
             alt="logo"
           />
-          <p className="sidebar-logo-name">CSHELL CONSOLE</p>
+          <p className="sidebar-title">CSHELL CONSOLE <br/><span className="sidebar-subtitle">Version: 1.0.0 Codename: Elsie</span></p>
         </div>
         <ul className="sidebar-list">
           {sidebarItems.map(({ name, href, icon: Icon }) => {

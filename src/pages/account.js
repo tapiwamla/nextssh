@@ -17,8 +17,9 @@ const Account = () => {
       <div className="account-details">
         <div className="profile">
           <div>
-            <p><span className="profile-details">Name: </span>{session.user.name || 'Not Available'}</p>
+            <p><span className="profile-details">Full Name: </span>{session.user.name || 'Not Available'}</p>
             <p><span className="profile-details">Email: </span>{session.user.email}</p>
+            <p><span className="profile-details">Username: </span>{session.user.email ? session.user.email.replace(/\.|@/g, '') : 'Not Available'}</p>
             <button className="signout-button" onClick={() => signOut()}>Sign out</button>
           </div>
           <div>

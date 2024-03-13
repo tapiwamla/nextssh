@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* GLOBAL LAYOUTS */
 :root {
@@ -8,6 +8,9 @@
   --color-active: #10b981;
   --color-dark: #252428;
   --color-red: #b70000;
+  --font-default: "Roboto", sans-serif;
+  --font-monospace: "Courier", monospace;
+  --font-title: "Lato", sans-serif;
 }
 
 * {
@@ -18,7 +21,7 @@
 
 body {
   background-color: #eee;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-default);
 }
 
 .layout {
@@ -75,15 +78,24 @@ body {
 }
 
 .sidebar-logo {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3.3rem;
+  height: 3.3rem;
   object-fit: contain;
   border-radius: 1rem;
 }
 
-.sidebar-logo-name {
-  font-size: 1.2rem;
+.sidebar-title {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 0.8;
+}
+
+.sidebar-subtitle {
+  font-size: 0.8rem;
   font-weight: 600;
+  color: var(--color-dark);
+  text-align: center;
 }
 
 .sidebar-list {
@@ -265,13 +277,13 @@ li:nth-last-of-type(2) {
 }
 
 .widget-info {
-  font-family:'Courier New', Courier, monospace;
+  font-family: var(--font-monospace);
   font-size: 1rem;
   font-weight: 500;
 }
 
 .widget-info strong {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-default);
 }
 
 .widget-buttons {
@@ -424,10 +436,14 @@ li:nth-last-of-type(2) {
   margin-right: 10px;
   font-weight: 600;
   line-height: 1.5;
+  font-family: var(--font-default);
 }
 
 .profile-picture {
   border-radius: 5rem;
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid var(--color-active);
 }
 
 
