@@ -29,6 +29,11 @@ const Dashboard = () => {
     fetchConnections();
   }, []);
 
+  const handleRemoveConnection = (hostToRemove) => {
+    const updatedConnections = connections.filter(connection => connection.host !== hostToRemove);
+    setConnections(updatedConnections);
+  };
+
   return (
     <BaseLayout pageTitle="CONNECTIONS">
       <div className="connections-dashboard">
@@ -37,12 +42,13 @@ const Dashboard = () => {
         ) : (
           <div className="widgets-grid">
             {connections.filter(connection => connection.host).map((connection) => ( 
-              <Widget
+                <Widget
                 key={connection.host}
                 alias={connection.alias}
                 host={connection.host}
                 username={connection.username}
                 password={connection.password}
+                onRemove={handleRemoveConnection}
               />
             ))}
           </div>
