@@ -32,11 +32,11 @@ const Dashboard = () => {
   return (
     <BaseLayout pageTitle="CONNECTIONS">
       <div className="connections-dashboard">
-        {connections.length === 0 ? (
-          <p>No active connections yet. Visit the "New Connection" page to create one.</p>
+        {connections.filter(connection => connection.host).length === 0 ? (
+          <p>No active connections yet. Click on "New Connection" to create one.</p>
         ) : (
           <div className="widgets-grid">
-            {connections.filter(connection => connection.host).map((connection) => (
+            {connections.filter(connection => connection.host).map((connection) => ( 
               <Widget
                 key={connection.host}
                 alias={connection.alias}
