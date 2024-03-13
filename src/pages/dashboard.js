@@ -21,18 +21,19 @@ const Dashboard = () => {
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         const connectionData = JSON.parse(localStorage.getItem(key));
-        storedConnections.push(connectionData); 
+        storedConnections.push(connectionData);
       }
       setConnections(storedConnections);
     };
-
+  
     fetchConnections();
-  }, []);
+  }, [connections]); 
 
   const handleRemoveConnection = (hostToRemove) => {
     const updatedConnections = connections.filter(connection => connection.host !== hostToRemove);
     setConnections(updatedConnections);
-  };
+    localStorage.removeItem(hostToRemove);
+  };  
 
   return (
     <BaseLayout pageTitle="CONNECTIONS">
