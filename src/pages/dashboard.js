@@ -19,7 +19,7 @@ const Dashboard = () => {
     };
 
     fetchConnections();
-  }, []); // Empty dependency array to run once when component mounts
+  }, []);
 
   const handleRemoveConnection = (hostToRemove) => {
     const updatedConnections = connections.filter(connection => connection.host !== hostToRemove);
