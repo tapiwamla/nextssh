@@ -23,6 +23,11 @@ body {
   font-family: var(--font-default);
 }
 
+body.dark-mode {
+  background-color: var(--color-dark);
+  color: #fff;
+}
+
 .layout {
   display: flex;
   height: 100vh;
