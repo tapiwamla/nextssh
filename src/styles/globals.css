@@ -324,7 +324,6 @@ li:last-of-type {
 
 /* SETTINGS */
 .setting-label {
-  font-size: 18px;
   font-weight: 600;
 }
 
@@ -425,17 +424,16 @@ li:last-of-type {
 .account-details {
   display: flex;
   flex-direction: column;
-  padding: 0 40px 20px;
-  border-radius: 5px;
-  background-color: #f5f5f5;
   max-width: 100%;
-  margin: auto;
+  margin-bottom: 2rem;
 }
 
 .profile {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 5px;
+  padding: 10px 40px 30px;
 }
 
 .account-details p {
@@ -444,8 +442,11 @@ li:last-of-type {
   font-weight: 500;
 }
 
-.profile h2 {
-  line-height: 3.5;
+.section-title {
+  line-height: 2.5;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .profile-details {
@@ -474,4 +475,13 @@ li:last-of-type {
   border: none;
   cursor: pointer;
   border-radius: 0.2rem;
+}
+
+.profile,
+.settings-container {
+  background-color: #f5f5f5;
+}
+
+.settings-container {
+  padding: 10px 40px 30px;
 }

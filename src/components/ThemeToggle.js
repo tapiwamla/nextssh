@@ -10,7 +10,7 @@ const ThemeToggle = () => {
 
   return (
     <div className="theme-setting">
-      <h3 className="setting-label">Application Theme</h3>
+      <p className="setting-label">Application Theme</p>
       <button className="theme-button" onClick={toggleTheme}>
         {isDarkMode ? <CiLight className="theme-icon"/> : <CiDark className="theme-icon" />} 
         {isDarkMode ? 'Light Mode' : 'Dark Mode'}

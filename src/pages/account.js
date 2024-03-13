@@ -18,7 +18,7 @@ const Account = () => {
       <div className="account-details">
         <div className="profile">
           <div>
-            <h2>Account Details</h2>
+            <h2 className="section-title">Profile Details</h2>
             <p><span className="profile-details">Full Name: </span>{session.user.name || 'Not Available'}</p>
             <p><span className="profile-details">Email: </span>{session.user.email}</p>
             <p><span className="profile-details">Username: </span>{session.user.email ? session.user.email.replace(/\.|@/g, '') : 'Not Available'}</p>
@@ -36,7 +36,7 @@ const Account = () => {
         </div>       
       </div>
       <div className="settings-container">
-        <h2>Preferences</h2>
+        <h2 className="section-title">User Preferences</h2>
         <ThemeToggle />
       </div>
     </BaseLayout>
