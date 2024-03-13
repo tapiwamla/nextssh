@@ -3,11 +3,13 @@
 /* GLOBAL LAYOUTS */
 :root {
   --color-bg: #fff;
+  --color-bg-body: #eee;
   --color-border: #e5e7eb;
   --color-sidebar-item: #f3f4f6;
   --color-active: #10b981;
   --color-dark: #252428;
   --color-red: #b70000;
+  --color-container: #f5f5f5;
   --font-default: "Lato", sans-serif;
   --font-monospace: "Space Mono", monospace;
 }
@@ -18,14 +20,15 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #eee;
-  font-family: var(--font-default);
+.dark-mode {
+  --color-bg-body: #19202e;
+  --color-container: #1E2738;
+
 }
 
-body.dark-mode {
-  background-color: var(--color-dark);
-  color: #fff;
+body {
+  background-color: var(--color-bg-body);
+  font-family: var(--font-default);
 }
 
 .layout {
@@ -38,7 +41,7 @@ body.dark-mode {
 .main-content {
   flex-grow: 1;
   margin: 0;
-  background-color: #eee;
+  background-color: var(--color-bg-body);
   padding: 23px 35px;
   font-size: 1rem;
   font-weight: 600;
@@ -181,7 +184,7 @@ li:last-of-type {
   flex-direction: column;
   padding: 40px;
   border-radius: 5px;
-  background-color: #f5f5f5;
+  background-color: var(--color-container);
   max-width: 100%;
   margin: auto;
 }
@@ -490,7 +493,7 @@ li:last-of-type {
 
 .profile,
 .settings-container {
-  background-color: #f5f5f5;
+  background-color: var(--color-container);
 }
 
 .settings-container {
