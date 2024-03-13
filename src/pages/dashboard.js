@@ -36,7 +36,7 @@ const Dashboard = () => {
           <p>No active connections yet. Visit the "New Connection" page to create one.</p>
         ) : (
           <div className="widgets-grid">
-            {connections.map((connection) => (
+            {connections.filter(connection => connection.host).map((connection) => (
               <Widget
                 key={connection.host}
                 alias={connection.alias}
