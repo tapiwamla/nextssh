@@ -1,19 +1,11 @@
 import BaseLayout from "@/components/BaseLayout";
-import Widget from '@/components/Widget'; 
+import Widget from '@/components/Widget';
 import { useEffect, useState } from 'react';
 import { useSession, getSession } from 'next-auth/react';
 
 const Dashboard = () => {
   const { data: session, status } = useSession();
   const [connections, setConnections] = useState([]);
-
-  if (status === "loading") {
-    return <div>Loading...</div>;
-  }
-
-  if (!session) {
-    return <div>Please sign in to view your dashboard.</div>;
-  }
 
   useEffect(() => {
     const fetchConnections = async () => {
@@ -25,15 +17,23 @@ const Dashboard = () => {
       }
       setConnections(storedConnections);
     };
-  
+
     fetchConnections();
-  }, [connections]); 
+  }, []); // Empty dependency array to run once when component mounts
 
   const handleRemoveConnection = (hostToRemove) => {
     const updatedConnections = connections.filter(connection => connection.host !== hostToRemove);
     setConnections(updatedConnections);
     localStorage.removeItem(hostToRemove);
-  };  
+  };
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (!session) {
+    return <div>Please sign in to view your dashboard.</div>;
+  }
 
   return (
     <BaseLayout pageTitle="CONNECTIONS">
@@ -42,8 +42,8 @@ const Dashboard = () => {
           <p>No active connections yet. Click on "New Connection" to create one.</p>
         ) : (
           <div className="widgets-grid">
-            {connections.filter(connection => connection.host).map((connection) => ( 
-                <Widget
+            {connections.filter(connection => connection.host).map((connection) => (
+              <Widget
                 key={connection.host}
                 alias={connection.alias}
                 host={connection.host}
