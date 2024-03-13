@@ -103,9 +103,10 @@ body {
   flex-direction: column;
 }
 
-li:nth-last-of-type(2) {
+li:last-of-type {
   margin-top: 32vh;
 }
+
 
 .sidebar-link {
   display: inline-block;
@@ -170,8 +171,7 @@ li:nth-last-of-type(2) {
 
 /* CONNECT FORM */
 .form-wrapper,
-.settings-container,
-.account-details {
+.settings-container {
   display: flex;
   flex-direction: column;
   padding: 40px;
@@ -335,6 +335,7 @@ li:nth-last-of-type(2) {
 }
 
 .theme-button {
+  width: 8rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -421,6 +422,16 @@ li:nth-last-of-type(2) {
 }
 
 /* ACCOUNT */
+.account-details {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px 20px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  max-width: 100%;
+  margin: auto;
+}
+
 .profile {
   display: flex;
   align-items: center;
@@ -431,6 +442,10 @@ li:nth-last-of-type(2) {
   display: flex;
   align-items: flex-start;
   font-weight: 500;
+}
+
+.profile h2 {
+  line-height: 3.5;
 }
 
 .profile-details {
@@ -446,11 +461,11 @@ li:nth-last-of-type(2) {
   width: 5rem;
   height: 5rem;
   border: 3px solid var(--color-active);
+  margin: auto;
 }
 
-
 .signout-button {
-  width: 10rem;
+  width: 8rem;
   font-size: 1rem;
   padding: 0.5rem;
   margin-top: 1rem;

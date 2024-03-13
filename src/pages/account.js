@@ -1,5 +1,6 @@
 import BaseLayout from "@/components/BaseLayout";
 import { useSession, getSession, signOut } from "next-auth/react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Account = () => {
   const { data: session, status } = useSession();
@@ -17,10 +18,10 @@ const Account = () => {
       <div className="account-details">
         <div className="profile">
           <div>
+            <h2>Account Details</h2>
             <p><span className="profile-details">Full Name: </span>{session.user.name || 'Not Available'}</p>
             <p><span className="profile-details">Email: </span>{session.user.email}</p>
             <p><span className="profile-details">Username: </span>{session.user.email ? session.user.email.replace(/\.|@/g, '') : 'Not Available'}</p>
-            <button className="signout-button" onClick={() => signOut()}>Sign out</button>
           </div>
           <div>
             <p>
@@ -30,8 +31,13 @@ const Account = () => {
                 "Not Available"
               )}
             </p>
+            <button className="signout-button" onClick={() => signOut()}>Sign out</button>
           </div>
         </div>       
+      </div>
+      <div className="settings-container">
+        <h2>Preferences</h2>
+        <ThemeToggle />
       </div>
     </BaseLayout>
   );

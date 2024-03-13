@@ -2,7 +2,6 @@ import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
 import { HiServer, HiTerminal } from "react-icons/hi";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdAccountCircle } from "react-icons/md";
-import { LuSettings2 } from "react-icons/lu";
 import Link from "next/link";
 import { useContext } from "react";
 import { SidebarContext } from "@/context/SidebarContext";
@@ -23,11 +22,6 @@ const sidebarItems = [
     name: "Terminal",
     href: "/terminal",
     icon: HiTerminal,
-  },
-  {
-    name: "Preferences",
-    href: "/settings",
-    icon: LuSettings2,
   },
   {
     name: "Account",
