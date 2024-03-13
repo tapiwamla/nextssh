@@ -1,6 +1,7 @@
 import BaseLayout from "@/components/BaseLayout";
 import { useSession, getSession, signOut } from "next-auth/react";
 import ThemeToggle from "@/components/ThemeToggle";
+import { PiSignOutBold } from "react-icons/pi";
 
 const Account = () => {
   const { data: session, status } = useSession();
@@ -31,7 +32,7 @@ const Account = () => {
                 "Not Available"
               )}
             </p>
-            <button className="signout-button" onClick={() => signOut()}>Sign out</button>
+            <button className="signout-button" onClick={() => signOut()}> <PiSignOutBold />Sign Out</button>
           </div>
         </div>       
       </div>
