@@ -265,6 +265,10 @@ li:last-of-type {
   padding: 0;
 }
 
+.no-connections {
+  color: var(--color-dark);
+}
+
 .connection-widget {
   display: block;
   align-items: center;
