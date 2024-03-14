@@ -9,17 +9,21 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchConnections = async () => {
-      const storedConnections = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        const connectionData = JSON.parse(localStorage.getItem(key));
-        storedConnections.push(connectionData);
+      try {
+        const storedConnections = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          const connectionData = JSON.parse(localStorage.getItem(key));
+          storedConnections.push(connectionData);
+        }
+        setConnections(storedConnections);
+      } catch (error) {
+        console.error("Error parsing localStorage data:", error);
       }
-      setConnections(storedConnections);
     };
-
+  
     fetchConnections();
-  }, []);
+  }, []);  
 
   const handleRemoveConnection = (hostToRemove) => {
     const updatedConnections = connections.filter(connection => connection.host !== hostToRemove);
