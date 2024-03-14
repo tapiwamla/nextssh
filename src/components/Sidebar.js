@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { SidebarContext } from "@/context/SidebarContext";
 import { useRouter } from "next/router";
 
+
 const sidebarItems = [
   {
     name: "New Connection",
@@ -45,7 +46,7 @@ const Sidebar = () => {
             width={80}
             height={80}
             className="sidebar-logo"
-            src="/logo.jpg"
+            src='/logo.jpg'
             alt="logo"
           />
           <p className="sidebar-title">CSHELL CONSOLE <br/><span className="sidebar-subtitle">Version: 1.0.0 Elsie</span></p>

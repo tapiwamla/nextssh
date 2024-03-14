@@ -210,10 +210,10 @@ li:last-of-type {
 
 .form-wrapper form label {
   display: flex;
+  align-items: center;
   position: relative;
   left: 0;
   justify-content: space-between;
-  vertical-align: middle;
 }
 
 .form-wrapper form input {
@@ -222,7 +222,14 @@ li:last-of-type {
   border: 1px solid #ccc;
   margin-bottom: 20px;
   margin-left: 10rem;
+  height: 3rem;
   width: 30rem;
+}
+
+.dark-mode .form-wrapper form input{
+  background-color: var(--color-bg-body);
+  color: var(--color-dark);
+  border: none;
 }
 
 .text-area {
@@ -239,12 +246,13 @@ li:last-of-type {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
+  font-family: var(--font-default);
   background-color: var(--color-active);
   color: #fff;
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
-  width: 20rem;
+  width: 15rem;
   text-align: center;
   margin-left: auto;
 }
