@@ -277,8 +277,20 @@ li:last-of-type {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode .connection-widget {
+  background-color: var(--color-container);
+  border: none;
+  color: var(--color-dark);
+}
+
 .connection-widget:hover {
   background-color: #e8e8e8;
+}
+
+.dark-mode .connection-widget:hover {
+  background-color: var(--color-container);
+  border: none;
+  color: var(--color-dark);
 }
 
 .widget-header {
@@ -303,6 +315,10 @@ li:last-of-type {
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+}
+
+.dark-mode .widget-title {
+  background-color: var(--color-active);
 }
 
 .widget-info {
