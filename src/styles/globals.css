@@ -21,9 +21,12 @@
 }
 
 .dark-mode {
+  --color-bg: var(--color-container);
   --color-bg-body: #19202e;
   --color-container: #1E2738;
-
+  --color-dark: #97AAC8;
+  --color-sidebar-item: var(--color-bg-body);
+  --color-section-title: #fff;
 }
 
 body {
@@ -74,6 +77,7 @@ body {
   overflow: hidden;
 }
 
+
 .sidebar-top {
   width: max-content;
   display: flex;
@@ -92,6 +96,7 @@ body {
 }
 
 .sidebar-title {
+  color: var(--color-section-title);
   font-family: var(--font-default);
   font-size: 1.3rem;
   font-weight: 800;
@@ -120,7 +125,7 @@ li:last-of-type {
   display: inline-block;
   font-size: 1rem;
   text-decoration: none;
-  color: #000;
+  color: var(--color-dark);
   padding: 0.8rem 1rem;
   display: flex;
   background-color: var(--color-sidebar-item);
@@ -129,7 +134,7 @@ li:last-of-type {
 }
 
 .sidebar-link--active {
-  color: #fff;
+  color: var(--color-bg);
   background-color: var(--color-active);
 }
 
@@ -164,6 +169,7 @@ li:last-of-type {
   right: 0;
   top: 4.7rem;
   border: none;
+  color: var(--color-dark);
   background-color: var(--color-bg);
   width: 1.5rem;
   height: 1.5rem;
@@ -184,6 +190,7 @@ li:last-of-type {
   flex-direction: column;
   padding: 40px;
   border-radius: 5px;
+  color: var(--color-dark);
   background-color: var(--color-container);
   max-width: 100%;
   margin: auto;
@@ -435,6 +442,7 @@ li:last-of-type {
   flex-direction: column;
   max-width: 100%;
   margin-bottom: 2rem;
+  color: var(--color-dark);
 }
 
 .profile {
@@ -452,6 +460,7 @@ li:last-of-type {
 }
 
 .section-title {
+  color: var(--color-section-title);
   line-height: 2.5;
   font-size: 1rem;
   font-weight: 800;
