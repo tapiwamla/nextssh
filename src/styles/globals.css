@@ -27,6 +27,7 @@
   --color-dark: #97AAC8;
   --color-sidebar-item: var(--color-bg-body);
   --color-section-title: #fff;
+  --color-active: #2C4C3B;
 }
 
 body {
@@ -136,6 +137,10 @@ li:last-of-type {
 .sidebar-link--active {
   color: var(--color-bg);
   background-color: var(--color-active);
+}
+
+.dark-mode .sidebar-link--active {
+  color: var(--color-dark);
 }
 
 .sidebar-icon {
