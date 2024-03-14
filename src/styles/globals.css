@@ -434,6 +434,7 @@ li:last-of-type {
   border: none;
   background-color: var(--color-active);
   color: #fff;
+  font-family: var(--font-default);
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
@@ -527,6 +528,10 @@ li:last-of-type {
   border: none;
   cursor: pointer;
   border-radius: 0.2rem;
+}
+
+.dark-mode .signout-button {
+  color: #fff;
 }
 
 .profile,
