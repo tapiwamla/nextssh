@@ -28,9 +28,32 @@ Connect to and command your remote servers effortlessly with CShell, a web-based
    npm install
    ```
 
-3. Start the Development Server:
+3. Add Environment Variables:
+   Create a `.env` file with the following content:
+
+   ```bash
+   NEXTAUTH_SECRET='your-secret-key' (Use `openssl rand -base64 32` to generate a secret key)
+   GOOGLE_CLIENT_ID='your-client-id'
+   GOOGLE_CLIENT_SECRET='your-client-secret'
+   GITHUB_CLIENT_ID='your-client-id'
+   GITHUB_CLIENT_SECRET='your-client-secret'
+   ```
+
+   _**Note:** The `NEXTAUTH_SECRET` value is optional for development, but **required** for production._
+
+4. For development, start the Development Server:
    ```bash
    npm run dev 
+   ```
+   
+   For production, first build the project:
+   ```bash
+   npm run build
+   ```
+
+   Then start the server:
+   ```bash
+   npm run start
    ```
 
 ## Contributing
