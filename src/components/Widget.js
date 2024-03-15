@@ -37,7 +37,7 @@ const ConnectionWidget = ({ alias, host, username, password, onRemove }) => {
     };
   };
 
-  const debouncedClick = debounce(handleClick, 5000);
+  const debouncedClick = debounce(handleClick, 500);
 
   return (
     <div className="connection-widget">
