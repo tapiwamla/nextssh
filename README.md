@@ -56,6 +56,18 @@ Connect to and command your remote servers effortlessly with CShell, a web-based
    npm run start
    ```
 
+## Testing
+
+- First install dependencies:
+   ```bash
+   npm install --save-dev jest @testing-library/react @testing-library/jest-dom babel-jest jest-environment-jsdom
+   ```
+
+- Run unit tests:
+   ```bash
+   npm test
+   ```
+
 ## Contributing
 
 - CShell was passionately crafted by [Tapiwanashe Mlambo](https://tapiwamla.me), a graduate of the Bachelor of Science in Applied Computer Technology from [USIU-Africa](https://usiu.ac.ke).
