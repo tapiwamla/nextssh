@@ -58,10 +58,7 @@ Connect to and command your remote servers effortlessly with CShell, a web-based
 
 ## Testing
 
-- First install dependencies:
-   ```bash
-   npm install --save-dev jest @testing-library/react @testing-library/jest-dom babel-jest jest-environment-jsdom
-   ```
+- The project includes [Jest](https://jestjs.io/) for unit testing.
 
 - Run unit tests:
    ```bash
