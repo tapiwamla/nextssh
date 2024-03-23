@@ -49,7 +49,7 @@ const Sidebar = () => {
             src='/logo.jpg'
             alt="logo"
           />
-          <p className="sidebar-title">CSHELL CONSOLE <br/><span className="sidebar-subtitle">Version: 1.0.0 Elsie</span></p>
+          <p className="sidebar-title">NEXTSSH CLIENT <br/><span className="sidebar-subtitle">Version: 1.0.0 Elsie</span></p>
         </div>
         <ul className="sidebar-list">
           {sidebarItems.map(({ name, href, icon: Icon }) => {

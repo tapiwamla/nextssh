@@ -21,8 +21,8 @@ const Index = () => {
         <img className="landing-image" src="/servers.jpg" alt="Servers" />
       </div>
       <div className="landing-right">
-        <h1 className="landing-title">CShell: SSH on the Web</h1>
-        <p className="landing-descr">Connect to and command your remote servers effortlessly with CShell, a web-based <strong>SSH client</strong> and <strong>terminal emulator</strong>. Master your systems directly from your browser!</p>
+        <h1 className="landing-title">NEXTSSH: SSH on the Web</h1>
+        <p className="landing-descr">Connect to and command your remote servers effortlessly with NEXTSSH, a web-based <strong>SSH client</strong> and <strong>terminal emulator</strong>. Master your systems directly from your browser!</p>
         {status === "loading" && <div>Loading...</div>}
         {!session && (
           <>
