@@ -1,6 +1,6 @@
 # NeXTSSH: A Web-based SSH Client and Terminal Emulator
 
-Connect to and command your remote servers effortlessly with NeXTSSH, a web-based SSH client and terminal emulator. Master your systems directly from your browser!
+Connect to and command your remote servers effortlessly with **NeXTSSH**, a web-based SSH client and terminal emulator. Master your systems directly from your browser!
 
 ## Key Features
 
