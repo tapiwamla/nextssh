@@ -1,6 +1,6 @@
-# CShell: A Web-based SSH Client and Terminal Emulator
+# NeXTSSH: A Web-based SSH Client and Terminal Emulator
 
-Connect to and command your remote servers effortlessly with CShell, a web-based SSH client and terminal emulator. Master your systems directly from your browser!
+Connect to and command your remote servers effortlessly with NeXTSSH, a web-based SSH client and terminal emulator. Master your systems directly from your browser!
 
 ## Key Features
 
@@ -20,7 +20,7 @@ Connect to and command your remote servers effortlessly with CShell, a web-based
 
 1. Clone the Repository:
    ```bash
-   git clone https://github.com/tapiwamla/cshell.git
+   git clone https://github.com/tapiwamla/NeXTSSH.git
    ```
 
 2. Install Dependencies:
@@ -67,13 +67,13 @@ Connect to and command your remote servers effortlessly with CShell, a web-based
 
 ## Contributing
 
-- CShell was passionately crafted by [Tapiwanashe Mlambo](https://tapiwamla.me), a graduate of the Bachelor of Science in Applied Computer Technology from [USIU-Africa](https://usiu.ac.ke).
+- NeXTSSH was passionately crafted by [Tapiwanashe Mlambo](https://tapiwamla.me), a graduate of the Bachelor of Science in Applied Computer Technology from [USIU-Africa](https://usiu.ac.ke).
 
-- Want to make CShell even better? I welcome contributions! Feel free to open issues, submit pull requests, or suggest new features. Let's build together!
+- Want to make NeXTSSH even better? I welcome contributions! Feel free to open issues, submit pull requests, or suggest new features. Let's build together!
 
-- If you find CShell useful, a star on the GitHub repo would be awesome!
+- If you find NeXTSSH useful, a star on the GitHub repo would be awesome!
 
 ## Additional Notes
 
-- **Security:** CShell handles SSH connections. Ensure you follow best security practices and use strong credentials.
+- **Security:** NeXTSSH handles SSH connections. Ensure you follow best security practices and use strong credentials.
 - **Deployment:** Explore suitable hosting options (like cloud providers) for production deployment.
