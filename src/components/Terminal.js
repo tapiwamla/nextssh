@@ -33,7 +33,7 @@ const XTerminal = () => {
         fitAddon.fit();
         webTerminal.current = terminal;
 
-        const socket = io('https://nextssh.netlify.app:3000');
+        const socket = io('https://nextssh.netlify.app');
         // for local development
         // const socket = io('http://localhost:3000');
 
