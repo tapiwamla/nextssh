@@ -33,6 +33,7 @@
 body {
   background-color: var(--color-bg-body);
   font-family: var(--font-default);
+  overflow: hidden;
 }
 
 .layout {
