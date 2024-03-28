@@ -29,7 +29,7 @@ const XTerminal = () => {
         terminal.loadAddon(fitAddon);
 
         terminal.open(ele);
-        terminal.write('Hi from \x1B[1;31mNEXTSSH\x1B[0m $ ');
+        terminal.write('Hi from \x1B[1;31mNeXTSSH\x1B[0m $ ');
         fitAddon.fit();
         webTerminal.current = terminal;
 
