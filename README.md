@@ -65,6 +65,27 @@ Connect to and command your remote servers effortlessly with **NeXTSSH**, a web-
    npm test
    ```
 
+## Screenshots
+
+### Landing Page:
+![Landing Page](public/screenshot-landing.png)
+
+### Connection Page:
+![New Connection Page](public/screenshot-connect.png)
+
+### Connections Dashboard:
+![Connections Dashboard](public/screenshot-dashboard.png)
+
+### Terminal Page:
+![Terminal Page](public/screenshot-terminal.png)
+
+### Account Page:
+![Account Page](public/screenshot-account.png)
+
+### Dark Mode:
+![Dark Mode](public/screenshot-dark.png)
+
+
 ## Contributing
 
 - NeXTSSH was passionately crafted by [Tapiwanashe Mlambo](https://tapiwamla.me), a graduate of the Bachelor of Science in Applied Computer Technology from [USIU-Africa](https://usiu.ac.ke).
