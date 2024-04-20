@@ -22,7 +22,7 @@ const Connect = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log('Form submitted with:', { host, username, password });
+    // console.log('Form submitted with:', { host, username, password });
 
     try {
       const response = await fetch('/api/ssh', {
