@@ -33,9 +33,7 @@ const XTerminal = () => {
         fitAddon.fit();
         webTerminal.current = terminal;
 
-        // const socket = io('http://localhost:3000');
-
-        const socket = io('https://nextssh.vercel.app');
+        const socket = io('http://localhost:3000');
 
         terminal.onData(data => socket.emit('message', data));
         socket.on('message', data => terminal.write(data)); 
