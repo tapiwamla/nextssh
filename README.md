@@ -32,6 +32,7 @@ Connect to and command your remote servers effortlessly with **NeXTSSH**, a web-
    Create a `.env` file with the following content:
    ```bash
    NEXTAUTH_SECRET='your-secret-key' # Use `openssl rand -base64 32` to generate a secret key
+   NEXT_PUBLIC_SOCKET_URL='your-production-url'
    GITHUB_CLIENT_ID='your-client-id'
    GITHUB_CLIENT_SECRET='your-client-secret'
    ```
