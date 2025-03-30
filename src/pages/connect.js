@@ -61,13 +61,12 @@ const Connect = () => {
             />
           </label>
           <label>
-            Host IP:
+            Server Address:
             <input 
               type="text" 
               value={host} 
-              onChange={(e) => setHost(e.target.value)} 
-              pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$" 
-              title="For example: 127.0.0.1" required 
+              onChange={(e) => setHost(e.target.value)}
+              required 
             />
           </label>
           <label>
