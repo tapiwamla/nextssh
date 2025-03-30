@@ -27,13 +27,6 @@ const Index = () => {
         {!session && (
           <>
             <div className="landing-buttons">
-            <button
-                onClick={() => signIn("google", { 
-                  callbackUrl: `${window.location.origin}/connect`
-                })}
-              >
-                <FaGoogle className="landing-icon" /> Continue with Google
-              </button>
               <button  
                 onClick={() => signIn("github", {
                   callbackUrl: `${window.location.origin}/connect`,
