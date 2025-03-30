@@ -32,7 +32,7 @@ const Account = () => {
                 "Not Available"
               )}
             </p>
-            <button className="signout-button" onClick={() => signOut()}> <PiSignOutBold />Sign Out</button>
+            <button className="signout-button" onClick={() => signOut({ callbackUrl: "/" })}> <PiSignOutBold />Sign Out</button>
           </div>
         </div>       
       </div>
