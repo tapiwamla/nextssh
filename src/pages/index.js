@@ -16,7 +16,10 @@ const Index = () => {
   }
 
   return (
-    <div className="landing-main"> 
+    <div className="landing-main">
+      <div className="mobile-warning">
+        <p>⚠️ Sorry. The mobile version is still in development. Kindly switch to a desktop or laptop browser.</p>
+      </div> 
       <div className="landing-left">
         <img className="landing-image" src="/servers.jpg" alt="Servers" />
       </div>

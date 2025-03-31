@@ -547,3 +547,16 @@ li:last-of-type {
 .settings-container {
   padding: 10px 40px 30px;
 }
+
+@media (min-width: 1129px) {
+  .mobile-warning {
+    display: none;
+  }
+}
+
+@media (max-width: 1129px) {
+  .landing-left,
+  .landing-right {
+    display: none !important;
+  }
+}
